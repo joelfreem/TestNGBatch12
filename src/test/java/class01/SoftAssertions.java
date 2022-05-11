@@ -21,7 +21,7 @@ public class SoftAssertions {
         driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
     }
 
-    @Test
+    @Test(groups = "regression")
     public void verifyCredentials(){
 
         SoftAssert soft=new SoftAssert();
@@ -43,6 +43,11 @@ public class SoftAssertions {
         //check all assertions
         soft.assertAll();
 
+    }
+
+    @Test(groups = "smoke")
+    public void loginTest2(){
+        System.out.println(" I am login under smoke");
     }
     @AfterMethod
     public  void CloseBrowser(){
