@@ -33,6 +33,9 @@ public class SoftAssertions {
         driver.findElement(By.id("txtPassword")).sendKeys("123456");
         driver.findElement(By.id("btnLogin")).click();
         String text = driver.findElement(By.id("spanMessage")).getText();
+        //assertions to make sure that the message is correct
+        soft.assertEquals(text,expectedText);
+
 
         soft.assertEquals(text,expectedText);
 
